@@ -1,39 +1,36 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AnchieTam - Chat</title>
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-  <header>
-    <h1>AnchieTam</h1>
-    <nav>
-      <a href="feed.html">Feed</a>
-      <a href="chat.html">Chat</a>
-      <a href="marketplace.html">Marketplace</a>
-      <a href="#" id="logout">Sair</a>
-    </nav>
-  </header>
-  <main>
-    <section class="chat">
-      <h2>Chats</h2>
-      <div id="chatList">
-        <!-- Lista de chats (pode ser implementada conforme necessário) -->
-      </div>
-      <div class="chat-window">
-        <div id="chatMessages">
-          <!-- Mensagens aparecerão aqui -->
-        </div>
-        <form id="chatForm">
-          <input type="text" id="chatInput" placeholder="Digite sua mensagem...">
-          <button type="submit">Enviar</button>
-        </form>
-      </div>
-    </section>
-  </main>
-  <script src="js/chat.js"></script>
-  <script src="js/auth.js"></script>
-</body>
-</html>
+document.addEventListener('DOMContentLoaded', function() {
+  const chatForm = document.getElementById('chatForm');
+  const chatMessages = document.getElementById('chatMessages');
+  // Simulação: todas as mensagens ficam armazenadas em LocalStorage
+  let messages = JSON.parse(localStorage.getItem('chatMessages')) || [];
+
+  function displayMessages() {
+    chatMessages.innerHTML = '';
+    messages.forEach(msg => {
+      const msgDiv = document.createElement('div');
+      msgDiv.className = 'chat-message';
+      msgDiv.textContent = `${msg.username}: ${msg.text} (${msg.timestamp})`;
+      chatMessages.appendChild(msgDiv);
+    });
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  }
+  displayMessages();
+
+  if (chatForm) {
+    chatForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const chatInput = document.getElementById('chatInput');
+      const text = chatInput.value;
+      const user = JSON.parse(localStorage.getItem('user'));
+      const newMsg = {
+        username: user.username,
+        text,
+        timestamp: new Date().toLocaleTimeString()
+      };
+      messages.push(newMsg);
+      localStorage.setItem('chatMessages', JSON.stringify(messages));
+      displayMessages();
+      chatInput.value = '';
+    });
+  }
+});
