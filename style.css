@@ -1,77 +1,202 @@
-/* Garante que o html e body ocupem 100% da altura da tela */
-html, body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-}
-
-/* Estilização do corpo com um fundo gradiente vibrante */
+/* Estilos gerais */
 body {
-  font-family: 'Arial', sans-serif;
-  background: linear-gradient(135deg, #ff6ec4, #7873f5, #34e89e);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
 }
 
-/* Container que ocupa toda a tela */
 .container {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-/* Caixa de login com fundo semi-transparente e cantos arredondados */
-.login-box {
-  background: rgba(255, 255, 255, 0.95);
-  padding: 40px;
-  border-radius: 20px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-  max-width: 90%;
-  width: 400px;
-  text-align: center;
+/* Estilo do cabeçalho do perfil */
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    width: 100%;
 }
 
-/* Título */
-.login-box h1 {
-  font-size: 36px;
-  margin-bottom: 30px;
-  color: #333;
+/* Cabeçalho com nome de perfil */
+.profile-header {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
 }
 
-/* Inputs */
-.login-box input[type="text"],
-.login-box input[type="password"] {
-  width: 100%;
-  padding: 15px;
-  margin: 10px 0;
-  border: 2px solid #ddd;
-  border-radius: 10px;
-  font-size: 16px;
+/* Removido a foto de perfil */
+.profile-header::before {
+    content: ""; /* Não mostrar a imagem */
+    width: 0px;
+    height: 0px;
+    margin-right: 15px;
 }
 
-/* Checkbox */
-.login-box input[type="checkbox"] {
-  margin-right: 8px;
+/* Área de informações do perfil (biografia) */
+#profile-info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
 }
 
-/* Botão de envio */
-.login-box button {
-  width: 100%;
-  padding: 15px;
-  background: #34e89e;
-  color: #fff;
-  border: none;
-  border-radius: 10px;
-  font-size: 18px;
-  margin-top: 20px;
-  cursor: pointer;
-  transition: background 0.3s ease;
+/* Caixa de texto para biografia */
+textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
-.login-box button:hover {
-  background: #2bb07c;
+/* Botões */
+button {
+    padding: 10px;
+    background-color: #FFC107;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #FFA000;
+}
+
+/* Estilo da parte inferior da página com emojis */
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    padding: 10px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar i {
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.navbar p {
+    font-size: 12px;
+    text-align: center;
+    color: #555;
+    margin-top: 5px;
+}
+
+/* Estilo para a parte de Marketplace */
+.marketplace-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-item {
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
+    width: 100%;
+}
+
+.product-item img {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.product-item p {
+    font-size: 18px;
+    color: #333;
+}
+
+/* Estilo de cada página específica */
+.page {
+    display: none;
+}
+
+/* Página ativa */
+.page.active {
+    display: block;
+}
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Estilo das páginas */
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+}
+
+/* Estilo da navegação com emojis */
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    padding: 10px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar div {
+    text-align: center;
+    cursor: pointer;
+}
+
+.navbar i {
+    font-size: 30px;
+}
+
+.navbar p {
+    font-size: 12px;
+    text-align: center;
+    color: #555;
+    margin-top: 5px;
+}
+
+/* Estilo das páginas individuais */
+#home-page, #profile-page, #marketplace-page {
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
