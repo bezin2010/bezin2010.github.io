@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecionando...</title>
+    <script>
+        window.location.href = "signup.html"; // Substitua pelo nome correto da sua página de criação de conta
+    </script>
+</head>
+<body>
+    <p>Redirecionando...</p>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnchieTam</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Container principal -->
+    <div class="container">
+        <!-- Página de Início -->
+        <div id="home-page" class="page active">
+            <h1>Bem-vindo ao Início!</h1>
+            <p>Conteúdo da página inicial.</p>
+        </div>
+
+        <!-- Página de Perfil -->
+        <div id="profile-page" class="page">
+            <div class="profile-container">
+                <h2>Meu Perfil</h2>
+                <textarea placeholder="Adicione sua biografia aqui..."></textarea>
+                <button>Salvar Biografia</button>
+            </div>
+        </div>
+
+        <!-- Página de Marketplace -->
+        <div id="marketplace-page" class="page">
+            <h1>Marketplace</h1>
+            <p>Conteúdo do Marketplace.</p>
+        </div>
+    </div>
+
+    <!-- Navegação com emojis -->
+    <div class="navbar">
+        <div onclick="switchPage('home-page')">
+            <i class="fas fa-home"></i>
+            <p>Início</p>
+        </div>
+        <div onclick="switchPage('profile-page')">
+            <i class="fas fa-user"></i>
+            <p>Perfil</p>
+        </div>
+        <div onclick="switchPage('marketplace-page')">
+            <i class="fas fa-store"></i>
+            <p>Marketplace</p>
+        </div>
+    </div>
+
+    <!-- Referência ao arquivo JS -->
+    <script src="script.js"></script>
+</body>
+</html>
