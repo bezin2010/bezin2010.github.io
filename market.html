@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AnchieTam - Marketplace</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>AnchieTam</h1>
+    <nav>
+      <a href="feed.html">Feed</a>
+      <a href="chat.html">Chat</a>
+      <a href="marketplace.html">Marketplace</a>
+      <a href="#" id="logout">Sair</a>
+    </nav>
+  </header>
+  <main>
+    <section class="marketplace">
+      <h2>Marketplace</h2>
+      <form id="marketForm">
+        <input type="file" id="productImage" accept="image/*">
+        <input type="text" id="productName" placeholder="Nome do Produto" required>
+        <input type="text" id="productPrice" placeholder="Preço" required>
+        <select id="paymentMethod">
+          <option value="pix">Chave Pix</option>
+          <option value="local">Pagamento no local</option>
+        </select>
+        <button type="submit">Anunciar Produto</button>
+      </form>
+      <div id="marketContainer">
+        <!-- Produtos anunciados serão exibidos aqui -->
+      </div>
+    </section>
+  </main>
+  <script src="js/market.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

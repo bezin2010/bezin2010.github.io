@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AnchieTam - Feed</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>AnchieTam</h1>
+    <nav>
+      <a href="feed.html">Feed</a>
+      <a href="chat.html">Chat</a>
+      <a href="marketplace.html">Marketplace</a>
+      <a href="#" id="logout">Sair</a>
+    </nav>
+  </header>
+  <main>
+    <!-- Seção de Stories -->
+    <section class="stories">
+      <h2>Stories</h2>
+      <div class="stories-container">
+        <!-- Exemplo de story -->
+        <div class="story">
+          <img src="assets/story1.jpg" alt="Story">
+          <p>Usuário 1</p>
+        </div>
+        <!-- Você pode replicar para mais stories -->
+      </div>
+    </section>
+
+    <!-- Seção de Nova Publicação -->
+    <section class="new-post">
+      <h2>Nova Publicação</h2>
+      <form id="postForm">
+        <input type="file" id="media" accept="image/*,video/*">
+        <textarea id="caption" placeholder="Legenda..."></textarea>
+        <button type="submit">Publicar</button>
+      </form>
+    </section>
+
+    <!-- Feed de Postagens -->
+    <section class="feed">
+      <h2>Feed</h2>
+      <div id="postsContainer">
+        <!-- Postagens serão adicionadas aqui via JavaScript -->
+      </div>
+    </section>
+
+    <!-- Seção de Notas das Matérias -->
+    <section class="notes">
+      <h2>Notas das Matérias</h2>
+      <form id="noteForm">
+        <input type="text" id="subject" placeholder="Nome da Matéria" required>
+        <input type="number" step="0.1" id="grade" placeholder="Sua Nota" required>
+        <button type="submit">Postar Nota</button>
+      </form>
+      <div id="notesContainer">
+        <!-- Notas serão exibidas aqui -->
+      </div>
+    </section>
+  </main>
+  <script src="js/posts.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>
